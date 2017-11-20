@@ -53,7 +53,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http:/
  	
  	
  	<build>
- 	      <finalName>eureka</finalName>
+ 	   <finalName>eureka</finalName>
  	</build>
  	
  	<dependencyManagement>
