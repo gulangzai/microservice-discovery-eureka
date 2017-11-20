@@ -8,16 +8,41 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http:/
 		<version>1.4.2.RELEASE</version>
 	</parent>
 	
+	 <properties>  
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
+    </properties> 
+    
 	<groupId>jiujichina.com</groupId>
 	<artifactId>microservice-discovery-eureka</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	
 	<dependencies>
+	
 	   <dependency>
 	       <groupId>org.springframework.cloud</groupId>
 	       <artifactId>spring-cloud-starter-eureka-server</artifactId>
 	   </dependency>
+	   
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-web</artifactId>
+           <exclusions>
+               <exclusion>
+                   <groupId>org.springframework.boot</groupId>
+                   <artifactId>spring-boot-starter-tomcat</artifactId>
+               </exclusion>
+           </exclusions>
+       </dependency>
+        
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	    <scope>provided</scope>
+	</dependency>
+
 	   
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -25,6 +50,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http:/
     </dependency>
     
 	</dependencies>
+ 	
+ 	
+ 	<build>
+ 	      <finalName>eureka</finalName>
+ 	</build>
  	
  	<dependencyManagement>
     <dependencies>
